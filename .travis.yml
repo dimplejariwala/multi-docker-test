@@ -2,5 +2,15 @@ sudo: required
 services:
     - docker
 
-#before_install:
-#    - docker build -t dimplejariwala/docker-react -f Dockerfile.dev . 
+before_install:
+    - docker build -t dimplejariwala/multidocker_fibo -f ./client/Dockerfile.dev ./client
+
+script:
+    - docker run dimplejariwala/multidocker_fibo npm run test -- --coverage
+
+
+after_success:
+    - docker build -t dimplejariwala/multidocker_client ./client
+    - docker build -t dimplejariwala/multidocker_nginx ./nginx
+    - docker build -t dimplejariwala/multidocker_server ./server
+    - docker build -t dimplejariwala/multidocker_worker ./worker
