@@ -4,25 +4,29 @@
         {
             "name": "client",
             "image": "dimplejariwala/multidocker_client",
-            "hostname": "client",            
+            "hostname": "client", 
+            "memory": 128,            
             "essential": false            
         },
         {
             "name": "server",
             "image": "dimplejariwala/multidocker_server",
-            "hostname": "api",            
+            "hostname": "api", 
+            "memory": 128,                       
             "essential": false            
         },
         {
             "name": "worker",
             "image": "dimplejariwala/multidocker_worker",
-            "hostname": "worker",            
+            "hostname": "worker",      
+            "memory": 128,                  
             "essential": false            
         },
         {
             "name": "nginx",
             "image": "dimplejariwala/multidocker_nginx",
-            "hostname": "nginx",            
+            "hostname": "nginx",     
+            "memory": 128,                   
             "essential": true,      
             "portMappings": [
                 {
