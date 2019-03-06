@@ -23,7 +23,7 @@ after_success:
 deploy:
     provider: elasticbeanstalk
     region: "us-east-2"
-    app: "Multi-Docker_Fib"
+    app: "MultiDockerFib"
     env: "MultiDockerFib-env"
     bucket_name: "elasticbeanstalk-us-east-2-496820115691"
     bucket_path: 'Docker-Multi'
