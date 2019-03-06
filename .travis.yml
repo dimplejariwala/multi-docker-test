@@ -14,3 +14,8 @@ after_success:
     - docker build -t dimplejariwala/multidocker_nginx ./nginx
     - docker build -t dimplejariwala/multidocker_server ./server
     - docker build -t dimplejariwala/multidocker_worker ./worker
+    - echo "$DockerHubPwd" | docker login -u "$DockerHubID" --password-stdin
+    - docker push dimplejariwala/multidocker_client
+    - docker push dimplejariwala/multidocker_server
+    - docker push dimplejariwala/multidocker_nginx
+    - docker push dimplejariwala/multidocker_worker
